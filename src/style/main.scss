@@ -37,6 +37,10 @@ html{
 	-moz-box-sizing:border-box; /* Firefox */
 	-webkit-box-sizing:border-box; /* Safari */
 }
+.main{
+	margin: 0 auto;
+	width: 10rem;
+}
 .site-title{
 	span{
 		display: block;
@@ -56,15 +60,14 @@ html{
 }
 
 .vip-card{
-	padding: 0 rem(20px);
-	margin: 0 0 rem(64px);
-	width:100%;
+	margin: 0 rem(20px) rem(64px);
+	width:rem(710px);
 }
 
 .swiper-slide{
 	img{
-		height: 100%;
-		width: 100%;
+		height:rem(360px);
+		width:rem(710px);
 	}
 } 
 
