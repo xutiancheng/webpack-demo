@@ -12,7 +12,7 @@ $base_fontsize_320:$base_fontsize_640*$mul_320;
 
 
 @function rem($n){
-  @return ($n/2/16px)+rem;
+  @return ($n/75px)+rem;
 }
 
 
@@ -193,14 +193,4 @@ html{
 
 .swiper-pagination-bullet-active{
 	background:rgba(6, 6, 6, 0.51);
-}
-
-@media all and (min-width:640px) {
-	html { font-size: $base_fontsize_640; }
-}
-@media all and (max-width:639px) and (min-width:480px) {
-	html { font-size: $base_fontsize_480; }
-}
-@media all and (max-width:479px) {
-	html { font-size: $base_fontsize_320;}
 }

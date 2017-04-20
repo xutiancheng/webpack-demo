@@ -7,8 +7,8 @@ var path = require("path");
 module.exports = {
 	entry: ['./src/script/swiper-3.4.2.min.js','./src/script/index.js'],
 	output:{
-		path: __dirname +'/dist',
-		filename: 'js/[name]-[chunkhash].js'
+		path: __dirname +'/src',
+		filename: 'script/[name].js'
 	},
 	module: {
 		loaders: [{
@@ -27,16 +27,11 @@ module.exports = {
             test: /\.(png|jpg|git|svg)$/i,
             loader: "file-loader",
             query:{
-            	name:"img/[name]-[hash:5].[ext]"
+            	name:"/src/res/[name].[ext]"
             }
         }]
 	},
 	plugins:[
-        new CleanPlugin(['dist'], {
-            "root": path.resolve(__dirname),
-            verbose: true,
-            dry: false
-        }),
 		packCSS,
         new htmlplugin({template : "index.html"})
 	]

@@ -1,7 +1,7 @@
 require('../style/reset.scss');
 require('../style/swiper-3.4.2.min.css');
 require('../style/main.scss');
-
+require('../script/lib-flexible.min');
 // var attachFastClick = require('fastclick');  
 // attachFastClick(document.body);  
 
