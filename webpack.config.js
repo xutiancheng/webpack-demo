@@ -1,4 +1,8 @@
 var htmlplugin = require("html-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var packCSS = new ExtractTextPlugin('css/style.css'); 
+var CleanPlugin = require('clean-webpack-plugin');
+var path = require("path");
 
 module.exports = {
 	entry: ['./src/script/swiper-3.4.2.min.js','./src/script/index.js'],
@@ -8,11 +12,17 @@ module.exports = {
 	},
 	module: {
 		loaders: [{
-            test: /\.css$/,
-            loader: "style-loader!css-loader"
-        },{
             test: /\.scss$/,
-            loader: "style-loader!css-loader!sass-loader"
+            loader: ExtractTextPlugin.extract({
+                  fallback: "style-loader",
+                  use: "css-loader!sass-loader"
+            })
+        },{
+            test: /\.css$/,
+            loader:ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader"
+            })
         },{
             test: /\.(png|jpg|git|svg)$/i,
             loader: "file-loader",
@@ -22,6 +32,12 @@ module.exports = {
         }]
 	},
 	plugins:[
-		new htmlplugin({template : "index.html"})
+        new CleanPlugin(['dist'], {
+            "root": path.resolve(__dirname),
+            verbose: true,
+            dry: false
+        }),
+		packCSS,
+        new htmlplugin({template : "index.html"})
 	]
 }
