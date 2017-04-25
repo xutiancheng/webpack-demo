@@ -8,7 +8,8 @@ module.exports = {
 	entry: ['./src/script/swiper-3.4.2.min.js','./src/script/index.js'],
 	output:{
 		path: __dirname +'/dist',
-		filename: 'js/[name]-[chunkhash].js'
+		filename: 'js/[name]-[chunkhash].js',
+        publicPath:'http://127.0.0.1:8080/dist/'
 	},
 	module: {
 		loaders: [{
