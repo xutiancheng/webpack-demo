@@ -1,16 +1,5 @@
 @charset "utf-8";
 
-$base_fontsize_640:24px;
-
-// 480-640
-$mul_480: 480/640;
-$base_fontsize_480:$base_fontsize_640*$mul_480;
-
-// <480
-$mul_320: 320/640;
-$base_fontsize_320:$base_fontsize_640*$mul_320;
-
-
 @function rem($n){
   @return ($n/75px)+rem;
 }
